@@ -46,7 +46,7 @@ end
  def team_colors(team_name)
   game_hash.each do |home_away, keys|
     if keys[:team_name] == team_name
-      return keys[:colors].map(&:capitalize)
+      return keys[:colors].map(& :capitalize)
     end
   end
 end
@@ -64,6 +64,15 @@ end
     end
   end
 end
+
+
+#def player_numbers(team)
+#  game_hash.each do |home_away, ncp|
+#    return ncp[:players].map { |player| player[:number] } if ncp[:team_name] == team
+#  end
+#end
+
+
 
  def player_stats(player_n)
   game_hash.each do |home_away, keys|
